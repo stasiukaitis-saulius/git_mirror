@@ -1,4 +1,0 @@
-magento/magento2
-magento/magento2-community-edition
-shopware/shopware
-shopware/devdocs

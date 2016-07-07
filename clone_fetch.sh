@@ -1,5 +1,10 @@
 #!/bin/bash
 
-while read item; do
-    ./clone_fetch_item.sh "$item"
-done < list.txt
+echo "Read repositories list"
+
+while read repository; do
+    echo "Will clone repository:" $repository
+    ./clone_fetch_item.sh "$repository"
+done < repositories_list.txt
+
+echo "End Reading repositories"

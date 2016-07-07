@@ -1,16 +1,19 @@
 #!/bin/bash
 
-item="$1"
-p="out/$item"
+repository="$1"
+pathToMirror="mirrors/$repository"
 
-if [[ ! -d $p ]] ; then
-    echo "Clone item $item"
-    if [[ $item == OXID* || $item == rezonanc* ]] ; then
-        git clone --mirror git@github.com:$item.git $p
+if [[ ! -d $pathToMirror ]] ; then
+    echo "Clone item $repository"
+
+    if [[ $repository == OXID* ]] ; then
+        echo "Clone SSH"
+        git clone --mirror git@github.com:$repository.git $pathToMirror
     else
-        git clone --mirror https://github.com/$item.git $p
+        echo "Clone HTTPS"
+        git clone --mirror https://github.com/$repository.git $pathToMirror
     fi
 else
-    echo "Fetch item $item"
-    cd $p && git fetch origin
+    echo "Fetch item $repository"
+    cd $pathToMirror && git fetch origin
 fi

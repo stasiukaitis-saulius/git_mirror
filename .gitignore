@@ -1,3 +1,4 @@
-/out/*
-!/out/.gitkeep
-/list.txt
+/mirrors/*
+!/mirrors/.gitkeep
+/repositories_list.txt
+.idea/
