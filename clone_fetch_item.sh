@@ -15,5 +15,5 @@ if [[ ! -d $pathToMirror ]] ; then
     fi
 else
     echo "Fetch item $repository"
-    cd $pathToMirror && git fetch origin
+    cd $pathToMirror && git fetch origin && git fetch -t origin
 fi
